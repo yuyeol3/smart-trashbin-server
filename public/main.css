@@ -1,0 +1,4 @@
+#trashbin-name {
+    width: calc(100% - 80px);
+    height: 35px;
+}

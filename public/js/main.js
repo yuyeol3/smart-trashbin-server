@@ -13,8 +13,8 @@ function trashBinDivSetup(data, div) {
         <div>
         ${data.name}
         <div class="info">
-            PET: ${Math.floor(data.pet) || "-"}%<br> 
-            CAN : ${Math.floor(data.can) || "-"}% <br>
+            PET: ${Math.floor(data.pet) || "0"}%<br> 
+            CAN : ${Math.floor(data.can) || "0"}% <br>
         </div>
     </div>
     <div class="buttons">
@@ -26,9 +26,9 @@ function trashBinDivSetup(data, div) {
         
         <h2>${data.name}</h2>
         <h4>${data.location}</h4>
-        <p>PET: ${Math.floor(data.pet) || "-"}%</p>
-        <p>CAN : ${Math.floor(data.can) || "-"}%</p>
-        <p>WEIGHT : ${Math.floor(data.weight) || "-"} g</p> 
+        <p>PET: ${Math.floor(data.pet) || "0"}%</p>
+        <p>CAN : ${Math.floor(data.can) || "0"}%</p>
+        <p>WEIGHT : ${Math.floor(data.weight) || "0"} g</p> 
     </details>
     
     `;
@@ -38,8 +38,39 @@ function trashBinDivSetup(data, div) {
 }
 
 
+async function search(event) {
+    event.preventDefault();
+    const searchForm = document.getElementById('search-form');
+    const searchInput = document.getElementById('trashbin-name');
+    const searchValue = searchInput.value;
+    searchInput.value = '';
+
+    if (searchValue === '') return;
+
+    const res = await axios.post('/trashbin/search', {name : searchValue});
+    const data = res?.data;
+
+    modal.setModal({
+        content: `
+        <span class="close-button" id="closeModalButton">&times;</span>
+        <h2>검색 : ${searchValue}</h2>
+        <div id="searched-trashbin-list">
+            검색 중...
+        </div>
+        <form id="submitForm" style="display: none;"></form>
+     `,
+        submitfn: ()=>{}
+    });
+
+    const searchedTrashbinList = document.getElementById('searched-trashbin-list');
+    setTrashList(data.data, 'searched-trashbin-list', trashBinDivSetup);
+    modal.open();
+}
+
 let rid = null;
 async function setPage() {
+    document.getElementById('search-form').onsubmit = search;
+
     let start = 0;
     let end = 30;
 
@@ -72,8 +103,10 @@ async function setPage() {
             setTrashList(data, "trash-bin-list", trashBinDivSetup);
         }, 5 * 60 * 1000);
     }
-
 }
 
+
+
 setPage();
+
 

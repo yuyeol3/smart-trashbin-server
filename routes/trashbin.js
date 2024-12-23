@@ -7,6 +7,8 @@ const trashbin = require('../controllers/trashbin');
 const router = express.Router();
 
 router.get('/lists', trashbin.lists);
+router.post('/search', trashbin.search);
+
 router.post('/add', isLoggedIn, trashbin.add);
 router.post('/delete', isLoggedIn, trashbin.delete);
 router.post('/update', isLoggedIn, trashbin.update);

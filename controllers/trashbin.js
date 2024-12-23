@@ -1,6 +1,5 @@
 const bcrypt = require('bcrypt');
 const db = require(process.cwd() + '/models');
-const {number} = require("nunjucks/src/tests");
 
 exports.lists = async (req, res, next) => {
     try {
@@ -32,6 +31,40 @@ exports.lists = async (req, res, next) => {
 
     } catch (err) {
         console.error(err);
+    }
+}
+
+exports.search = async (req, res, next) => {
+    try {
+        const {name} = req.body;
+        const [data] = await db.execute(`
+            SELECT 
+                    tb.id AS id,
+                    tb.name AS name,
+                    tb.location AS location,
+                    tbl.pet AS pet,
+                    tbl.can AS can,
+                    tbl.others AS others,
+                    tbl.weight AS weight
+                FROM 
+                    trash_bins tb
+                LEFT JOIN 
+                    trash_bins_log tbl
+                ON 
+                    tb.recent_data = tbl.id
+                WHERE name LIKE ?`,
+        ['%' + name + '%']);
+
+        return res.json({
+            message : 'succeed',
+            data : data
+        });
+    } catch (err) {
+        console.error(err);
+        return res.json({
+            message : 'unknown error',
+            data : []
+        })
     }
 }
 

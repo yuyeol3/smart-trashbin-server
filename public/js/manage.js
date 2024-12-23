@@ -55,8 +55,8 @@ function trashBinDivSetup(data, div) {
         <div>
         ${data.name}
         <div class="info">
-            PET: ${Math.floor(data.pet) || "-"}%<br> 
-            CAN : ${Math.floor(data.can) || "-"}% <br>
+            PET: ${Math.floor(data.pet) || "0"}%<br> 
+            CAN : ${Math.floor(data.can) || "0"}% <br>
         </div>
     </div>
     <div class="buttons">
@@ -71,9 +71,9 @@ function trashBinDivSetup(data, div) {
         
         <h2>${data.name}</h2>
         <h4>${data.location}</h4>
-        <p>PET: ${Math.floor(data.pet) || "-"}%</p>
-        <p>CAN : ${Math.floor(data.can) || "-"}%</p>
-        <p>WEIGHT : ${Math.floor(data.weight) || "-"} g</p> 
+        <p>PET: ${Math.floor(data.pet) || "0"}%</p>
+        <p>CAN : ${Math.floor(data.can) || "0"}%</p>
+        <p>WEIGHT : ${Math.floor(data.weight) || "0"} g</p> 
     </details>
     
     `;
