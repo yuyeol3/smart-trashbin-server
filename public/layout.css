@@ -1,0 +1,113 @@
+/* 기본 스타일 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* 모든 요소에 박스 크기 계산 포함 */
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* 상단바 스타일 */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em 1em; /* 좌우 패딩을 균일하게 설정 */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.navbar .logo {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.navbar .menu {
+  display: flex; /* 메뉴 아이템을 가로로 정렬 */
+}
+
+.navbar .menu a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 0.5em; /* 양옆에 간격 유지 */
+  padding: 0.5em;
+  transition: background-color 0.3s;
+}
+
+.navbar .menu a:hover {
+  background-color: #575757;
+  border-radius: 5px;
+}
+
+/* 콘텐츠 스타일 */
+.content {
+   /* 상단바 높이만큼 여백 추가 */
+  padding: 1em;
+  width: 70%;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+section {
+  padding: 2em 0;
+  border-bottom: 1px solid #ddd;
+}
+
+h1 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin: 0;
+}
+
+@media screen and (max-width : 800px) {
+  .content {
+    margin-left : 0;
+    margin-right : 0;
+    width: 100%;
+  }  
+}
+
+button {
+  background-color: #333333;
+  color: white;
+  border: none;
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #9f9f9f;
+}
+
+label {
+  display: block;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+input:focus {
+  border-color: #333333;
+  outline: none;
+}

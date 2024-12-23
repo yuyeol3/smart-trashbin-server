@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    메인
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/manage.css">
+<link rel="stylesheet" href="/trashbin.css">
+{% endblock %}
+
+{% block menu %}
+<a href="/manage/register">관리자 등록</a>
+<a href="/auth/logout">로그아웃</a>
+{% endblock %}
+
+{% block content %}
+<h1>관리하기</h1>
+<div>쓰레기통 등록</div>
+<button id="add-trash-bin">등록</button>
+
+<div id="trash-bin-list">
+
+</div>
+
+<button id="prev">이전</button>
+<button id="next">다음</button>
+
+<!-- 모달 HTML -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+<!--        <span class="close-button" id="closeModalButton">&times;</span>-->
+<!--        <h2>쓰레기통 등록</h2>-->
+<!--        <form id="trashCanForm">-->
+<!--            <label for="name">이름:</label>-->
+<!--            <input type="text" id="name" name="name" required>-->
+<!--            <br><br>-->
+<!--            <label for="location">위치:</label>-->
+<!--            <input type="text" id="location" name="location" required>-->
+<!--            <br><br>-->
+<!--            <label for="key">인증키:</label>-->
+<!--            <input type="text" id="key" name="key" required>-->
+
+<!--            <button type="submit">등록</button>-->
+<!--        </form>-->
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="/js/manage.js" type="module"></script>
+{% endblock %}

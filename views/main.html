@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="/trashbin.css">
+{% endblock %}
+
+{% block title %}
+메인
+{% endblock %}
+    
+{% block content %}
+<h1>가로 쓰레기통 찾기</h1>
+<div id="trash-bin-list">
+
+</div>
+
+<button id="prev">이전</button>
+<button id="next">다음</button>
+
+<!-- 모달 HTML -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <!--        <span class="close-button" id="closeModalButton">&times;</span>-->
+        <!--        <h2>쓰레기통 등록</h2>-->
+        <!--        <form id="trashCanForm">-->
+        <!--            <label for="name">이름:</label>-->
+        <!--            <input type="text" id="name" name="name" required>-->
+        <!--            <br><br>-->
+        <!--            <label for="location">위치:</label>-->
+        <!--            <input type="text" id="location" name="location" required>-->
+        <!--            <br><br>-->
+        <!--            <label for="key">인증키:</label>-->
+        <!--            <input type="text" id="key" name="key" required>-->
+
+        <!--            <button type="submit">등록</button>-->
+        <!--        </form>-->
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script src="/js/main.js" type="module"></script>
+{% endblock %}

@@ -1,0 +1,21 @@
+{
+    "development": {
+      "user": "root",
+      "password": "",
+      "database": "adventure_design",
+      "host": "localhost"
+    },
+    "test": {
+      "username": "root",
+      "password": null,
+      "database": "database_test",
+      "host": "127.0.0.1"
+    },
+    "production": {
+      "user": "root",
+      "password": "",
+      "database": "adventure_design",
+      "host": "localhost"
+    }
+  }
+  

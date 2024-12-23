@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    {% block title %}
+        가로 쓰레기통
+    {% endblock %}
+  </title>
+  <link rel="stylesheet" href="/layout.css">
+  {% block head %}
+  {% endblock %}
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo" onclick="location.href='/'">가로 쓰레기통</div>
+    <nav class="menu">
+        {% block menu %}
+<!--            <a href="#home">홈</a>-->
+<!--            <a href="#about">소개</a>-->
+        {% endblock %}
+    </nav>
+  </header>
+  <main class="content">
+    {% block content %}
+    {% endblock %}
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  {% block script %}
+  {% endblock %}
+</body>
+</html>
