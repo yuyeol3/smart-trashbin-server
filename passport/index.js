@@ -12,7 +12,7 @@ module.exports = () => {
             const [rows] = await db.execute('SELECT id FROM users WHERE id=?', [id]);
             if (rows.length > 0) {
                 const user = rows[0];
-                console.log(user);
+                // console.log(user);
                 done(null, user);
             } else done(null);
         } catch (err) {
