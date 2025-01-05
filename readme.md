@@ -32,6 +32,5 @@ smart-trashbin/
 ├── public/               # 정적 파일 (CSS, JS, 이미지)
 ├── app.js                # 애플리케이션 진입점
 ├── .env                  # 환경 변수 파일
-├── .gitignore            # Git에서 제외할 파일/폴더
 └── adventure_design.sql  # SQL 데이터베이스 초기화 스크립트
 ```
